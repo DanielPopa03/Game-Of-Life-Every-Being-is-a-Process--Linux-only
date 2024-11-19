@@ -2,8 +2,10 @@
  This is was an assigment for my Operating Systems course.
 Implement a Game of Life in the following way:
 This the text of the assigment:
-    2.On a 100x100 board (a matrix allocated in a shared memory segment, with cells protected by semaphores to prevent concurrent writing by multiple processes), there are plants, herbivorous animals, and carnivorous animals, with animals being male (M) or female (F). Each new participant comes into existence as a separate process that accesses the board and places a symbol (letter) in its current position: P (plant), I (male herbivore), i (female herbivore), C (male carnivore), c (female carnivore). Each participant has an initial energy level E: P has 100, I or i has 40, and C or c has 60. i and c have a gestation period G, initially set to -1. P does not move, but the rest can move.
+    
+ 2.On a 100x100 board (a matrix allocated in a shared memory segment, with cells protected by semaphores to prevent concurrent writing by multiple processes), there are plants, herbivorous animals, and carnivorous animals, with animals being male (M) or female (F). Each new participant comes into existence as a separate process that accesses the board and places a symbol (letter) in its current position: P (plant), I (male herbivore), i (female herbivore), C (male carnivore), c (female carnivore). Each participant has an initial energy level E: P has 100, I or i has 40, and C or c has 60. i and c have a gestation period G, initially set to -1. P does not move, but the rest can move.
     The game evolves in stages. In each stage, each participant performs a specific activity:
+    
 P (plant):
     Energy (E) decreases by 1, and if it reaches 0, the plant dies (disappears).
     E can decrease faster if there is an adjacent herbivore.
