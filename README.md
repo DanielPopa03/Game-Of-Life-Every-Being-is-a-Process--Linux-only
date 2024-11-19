@@ -10,28 +10,35 @@ P (plant):
     Energy (E) decreases by 1, and if it reaches 0, the plant dies (disappears).
     E can decrease faster if there is an adjacent herbivore.
     Every 10 stages, it generates a child in an adjacent free position (if one exists).
+    
 I (male herbivore):
     E decreases by 1, and if it reaches 0, the animal dies (disappears).
     If adjacent to a P, E increases by 2 and the plant’s E decreases by 1.
     If E > 15 and adjacent to an i, E decreases by 5 and the i’s gestation (G) becomes 20.
     If E < 10, it moves 1x1 toward the closest P in a 10x10 neighboring area (if not already adjacent to a P and only if a unique P can be determined).
     If E > 20, it moves 1x1 toward the closest i in a 10x10 neighboring area (if not already adjacent to an i and only if a unique i can be determined).
+    
 i (female herbivore):
     E decreases by 1, and if it reaches 0, the animal dies (disappears).
     If adjacent to a P, E increases by 2 and the plant’s E decreases by 1.
     If E < 10, it moves 1x1 toward the closest P in a 10x10 neighboring area (if not already adjacent to a P and only if a unique P can be determined).
     If G is 0, it generates a child I or i in a free adjacent zone (if one exists), and G becomes -1.
+    
 C (male carnivore):
+
     E decreases by 1, and if it reaches 0, the animal dies (disappears).
     If adjacent to an I or i, E increases by the E of that I/i, and that I/i’s E becomes 0 (it dies).
     If E > 15 and adjacent to a c, E decreases by 5 and the c’s G becomes 20.
     If E < 20, it moves 1x1 toward the closest I/i in a 10x10 neighboring area (only if a unique I/i can be determined).
     If E > 30, it moves 1x1 toward the closest c in a 10x10 neighboring area (if not already adjacent to a c and only if a unique c can be determined).
+    
 c (female carnivore):
+
     E decreases by 1, and if it reaches 0, the animal dies (disappears).
     If adjacent to an I or i, E increases by the E of that I/i, and that I/i’s E becomes 0 (it dies).
     If E < 20, it moves 1x1 toward the closest I/i in a 10x10 neighboring area (only if a unique I/i can be determined).
     If G is 0, it generates a child C or c in a free adjacent zone (if one exists), and G becomes -1.
+    
 The Game of Life ends when the board is empty or only plants remain. The numerical values above can be adjusted to achieve more dramatic effects. The interface will be ncurses.
 
 The following figures show how I tackled the problem. The main process (referred to as the Parent) first creates the shared memory for the matrix, which holds the "beings" of the application.
