@@ -7,11 +7,13 @@ This the text of the assigment:
     The game evolves in stages. In each stage, each participant performs a specific activity:
     
 P (plant):
+
     Energy (E) decreases by 1, and if it reaches 0, the plant dies (disappears).
     E can decrease faster if there is an adjacent herbivore.
     Every 10 stages, it generates a child in an adjacent free position (if one exists).
     
 I (male herbivore):
+
     E decreases by 1, and if it reaches 0, the animal dies (disappears).
     If adjacent to a P, E increases by 2 and the plant’s E decreases by 1.
     If E > 15 and adjacent to an i, E decreases by 5 and the i’s gestation (G) becomes 20.
